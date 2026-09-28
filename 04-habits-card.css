@@ -1,0 +1,221 @@
+.komo-bottom-block {
+  margin-block-start: 24px !important;
+  padding-bottom: 20px;
+}
+
+.komo-habit-card {
+  border-radius: 14px !important;
+}
+
+.komo-habit-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.komo-habit-hdr .komo-label {
+  margin-bottom: 0;
+  color: var(--komo-lavender);
+}
+
+.komo-habit-hdr .komo-label::before {
+  display: none;
+}
+
+.komo-add-habit-btn {
+  padding: 3px 8px;
+  border: 1px solid var(--komo-border);
+  border-radius: var(--komo-radius);
+  color: var(--komo-lavender);
+  cursor: pointer;
+  font-size: 0.6rem;
+  transition: all 0.15s;
+}
+
+.komo-add-habit-btn:hover {
+  border-color: var(--komo-lavender);
+  color: var(--komo-lavender);
+}
+
+.komo-habit-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.komo-week-hdr {
+  display: grid;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px 6px;
+  border-bottom: 1px solid var(--komo-border);
+  margin-bottom: 4px;
+}
+
+.komo-week-hdr-day,
+.komo-week-hdr-pct {
+  color: var(--komo-muted);
+  font-family: var(--komo-font);
+  font-size: 0.58rem;
+  text-align: center;
+}
+
+.komo-habit-row {
+  position: relative;
+  display: grid;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 4px;
+  border-radius: var(--komo-radius);
+  transition: background 0.12s;
+}
+
+.komo-habit-row:hover {
+  background: var(--komo-overlay);
+}
+
+.komo-habit-name {
+  overflow: hidden;
+  color: var(--komo-sub);
+  cursor: default;
+  font-family: var(--komo-font);
+  font-size: 0.73rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.komo-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  border: 1px solid var(--komo-border);
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.komo-dot:hover {
+  border-color: var(--komo-lavender);
+  background: rgba(203, 166, 247, 0.14);
+  box-shadow: 0 0 6px rgba(203, 166, 247, 0.22);
+}
+
+.komo-dot.on {
+  border-color: var(--komo-lavender);
+  background: var(--komo-lavender);
+  box-shadow: 0 0 8px rgba(203, 166, 247, 0.3);
+}
+
+.komo-dot.on::after {
+  color: rgba(13, 14, 20, 0.8);
+  content: '·';
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.komo-habit-pct {
+  color: var(--komo-muted);
+  font-size: 0.63rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.komo-habit-delete {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: var(--komo-radius);
+  background: transparent;
+  color: var(--komo-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.65rem;
+  line-height: 18px;
+  text-align: center;
+}
+
+.komo-habit-delete:hover {
+  border: 1px solid var(--komo-lavender);
+  background: rgba(203, 166, 247, 0.14);
+  color: var(--komo-lavender);
+}
+
+.komo-bio-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--komo-border);
+}
+
+.komo-bio-lbl {
+  min-width: 100px;
+  color: var(--komo-muted);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+}
+
+.komo-bio-bar-wrap {
+  flex: 1;
+  height: 3px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--komo-faint);
+}
+
+.komo-bio-bar {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(to right, var(--komo-sakura), var(--komo-lavender));
+  box-shadow: 0 0 8px rgba(245, 194, 231, 0.4);
+  transition: width 0.5s ease;
+}
+
+.komo-bio-pct {
+  min-width: 32px;
+  color: var(--komo-sakura);
+  font-size: 0.65rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.komo-habit-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 280px;
+  padding: 14px;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--komo-lavender);
+  border-radius: var(--komo-radius);
+  background: var(--komo-surface);
+  box-shadow: var(--komo-shadow);
+  box-sizing: border-box;
+}
+
+.komo-habit-form input {
+  width: 100%;
+  padding: 7px 8px;
+  border: 1px solid var(--komo-border);
+  border-radius: var(--komo-radius);
+  background: var(--komo-overlay);
+  color: var(--komo-text);
+  font: inherit;
+  font-size: 0.68rem;
+  box-sizing: border-box;
+}

@@ -1,0 +1,294 @@
+.komo-lower-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.komo-dashboard-calendar {
+  position: relative;
+  width: 320px;
+  height: 260px !important;
+  min-height: 260px;
+  max-height: 260px !important;
+  flex: 0 0 320px;
+  padding: 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: var(--komo-surface);
+  border: 1px solid var(--komo-border);
+  border-radius: 14px !important;
+}
+
+.komo-dashboard-calendar .komo-label {
+  margin-bottom: 12px;
+  color: var(--komo-lavender);
+}
+
+.komo-dashboard-calendar .komo-label::before {
+  display: none;
+}
+
+.komo-calendar-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.komo-calendar-toolbar .komo-label {
+  margin-bottom: 12px;
+}
+
+.komo-calendar-month {
+  margin-bottom: 12px;
+  color: var(--komo-sub);
+  font-size: 0.62rem;
+}
+
+.komo-calendar-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 5px;
+}
+
+.komo-calendar-tab {
+  padding: 3px 6px;
+  border: 1px solid transparent;
+  border-radius: var(--komo-radius);
+  background: transparent;
+  color: var(--komo-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.54rem;
+}
+
+.komo-calendar-tab.is-active {
+  color: var(--komo-lavender);
+  border-color: var(--komo-border);
+  background: var(--komo-overlay);
+}
+
+.komo-dashboard-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.komo-dashboard-calendar-grid > div {
+  display: grid;
+  place-items: center;
+  min-height: 20px;
+  color: var(--komo-sub);
+  font-size: 0.62rem;
+}
+
+.komo-dashboard-calendar .komo-calendar-weekday {
+  color: var(--komo-muted);
+  font-size: 0.55rem;
+  text-transform: uppercase;
+}
+
+.komo-dashboard-calendar .komo-calendar-cell {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: var(--komo-radius);
+  cursor: pointer;
+}
+
+.komo-dashboard-calendar .komo-calendar-cell:hover {
+  border-color: var(--komo-lavender);
+  background: rgba(203, 166, 247, 0.06);
+}
+
+.komo-dashboard-calendar .komo-calendar-cell.is-today {
+  color: var(--komo-lavender);
+  border-color: var(--komo-lavender);
+  background: rgba(203, 166, 247, 0.1);
+}
+
+.komo-dashboard-calendar .komo-calendar-empty {
+  pointer-events: none;
+}
+
+.komo-calendar-cell.has-event::after {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--komo-sakura);
+  content: '';
+}
+
+.komo-calendar-controls {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin: 0;
+}
+
+.komo-calendar-nav {
+  width: 24px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid var(--komo-border);
+  border-radius: var(--komo-radius);
+  background: var(--komo-overlay);
+  color: var(--komo-lavender);
+  cursor: pointer;
+}
+
+.komo-calendar-nav:hover {
+  border-color: var(--komo-lavender);
+}
+
+.komo-calendar-tasks {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 170px;
+  overflow-y: auto;
+}
+
+.komo-calendar-empty-text {
+  padding: 50px 0;
+  color: var(--komo-muted);
+  font-size: 0.68rem;
+  text-align: center;
+}
+
+.komo-task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 7px 8px;
+  border: 1px solid var(--komo-border);
+  border-radius: var(--komo-radius);
+  background: var(--komo-overlay);
+}
+
+.komo-task-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.komo-task-date {
+  color: var(--komo-lavender);
+  font-size: 0.55rem;
+}
+
+.komo-task-title {
+  margin-top: 2px;
+  color: var(--komo-text);
+  font-size: 0.68rem;
+}
+
+.komo-task-text {
+  margin-top: 2px;
+  overflow: hidden;
+  color: var(--komo-muted);
+  font-size: 0.58rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.komo-task-delete {
+  border: 0;
+  background: transparent;
+  color: var(--komo-red);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.7rem;
+}
+
+.komo-calendar-time-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--komo-muted);
+  font-size: 0.62rem;
+}
+
+.komo-calendar-time-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.komo-calendar-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 280px;
+  padding: 14px;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--komo-lavender);
+  border-radius: var(--komo-radius);
+  background: var(--komo-surface);
+  box-sizing: border-box;
+}
+
+.komo-calendar-form-title {
+  color: var(--komo-lavender);
+  font-size: 0.7rem;
+}
+
+.komo-calendar-form input,
+.komo-calendar-form textarea {
+  width: 100%;
+  padding: 7px 8px;
+  border: 1px solid var(--komo-border);
+  border-radius: var(--komo-radius);
+  background: var(--komo-overlay);
+  color: var(--komo-text);
+  font: inherit;
+  font-size: 0.68rem;
+  box-sizing: border-box;
+}
+
+.komo-calendar-form textarea {
+  min-height: 54px;
+  resize: none;
+}
+
+.komo-calendar-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.komo-calendar-form-actions button {
+  padding: 5px 9px;
+  border: 1px solid var(--komo-border);
+  border-radius: var(--komo-radius);
+  background: var(--komo-overlay);
+  color: var(--komo-sub);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.62rem;
+}
+
+.komo-calendar-form-actions .komo-calendar-save {
+  border-color: var(--komo-lavender);
+  color: var(--komo-lavender);
+}
+
+@media (max-width: 700px) {
+  .komo-lower-row {
+    flex-direction: column;
+  }
+
+  .komo-dashboard-calendar {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+}

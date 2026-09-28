@@ -1,0 +1,15 @@
+.komo-stats-row,
+.komo-brand,
+.komo-header-right {
+  display: none !important;
+}
+
+.komo-time {
+  font-size: 2.4rem !important;
+}
+
+.komo-clock-block {
+  grid-column: 1 / -1;
+  justify-self: center;
+  transform: translateY(0);
+}
